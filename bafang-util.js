@@ -1,6 +1,4 @@
-
-
-var objs = require('./objs').clean_record
+var objs = require('./objs').buchongxingxi;
 
 function generateInsertSql(table, fieldObjs) {
 
@@ -60,7 +58,7 @@ function generateResultMap(fieldObjs) {
 
 function transformStr(str) {
     var newStr = '';
-    var arr = str.split('_');//split是分隔字符串
+    var arr = str.split('_'); //split是分隔字符串
     for (var i = 0; i < arr.length; i++) {
         var s = arr[i];
         if (i == 0) {
@@ -89,7 +87,9 @@ function generateEntity(fieldObjs) {
             case 'INTEGER':
                 clazz = 'Integer'
                 break;
-
+            case 'DECIMAL':
+                clazz = 'BigDecimal'
+                break;
             default:
                 break;
         }
@@ -102,8 +102,10 @@ function generateEntity(fieldObjs) {
     console.log(jsonPropertyJsonProperties);
 }
 
-// generateInsertSql('clean_record', objs);
-generateUpdateSql('clean_record', objs);
-// generateResultMap(objs);
-// generateEntity(objs);
-
+generateInsertSql('service_claims_record', objs);
+console.log('-------------------');
+generateUpdateSql('service_claims_record', objs);
+console.log('-------------------');
+generateResultMap(objs);
+console.log('-------------------');
+generateEntity(objs);
