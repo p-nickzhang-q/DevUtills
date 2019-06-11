@@ -67,5 +67,42 @@ function testGroupSum() {
     console.log(JSON.stringify(map));
 }
 
+function testContainSameElement() {
+    var data = [{
+            tableName: 'weight',
+            type: 'INTEGER',
+            num: 10,
+            num1: 10
+        },
+        {
+            tableName: 'create_time',
+            type: 'BIGINT',
+            num: 10,
+            num1: 10
+        },
+        {
+            tableName: 'create_user_id',
+            type: 'BIGINT',
+            num: 10,
+            num1: 10
+        },
+        {
+            tableName: 'update_time',
+            type: 'BIGINT',
+            num: 10,
+            num1: 10
+        },
+        {
+            tableName: 'update_user_id',
+            type: 'BIGINT',
+            num: 10,
+            num1: 10
+        }
+    ]
+    var arr = Utill.containSameElement(data, ['tableName'])
+    console.log(JSON.stringify(arr));
+}
+
+testContainSameElement();
 testSum();
 testGroupSum();

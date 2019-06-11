@@ -56,6 +56,19 @@ function sum(arr, sumPropertyName) {
     }, 0)
 }
 
+function containSameElement(arr, groupPropertyName) {
+    //根据属性分组，如果map的keys，与输入数组长度不同，说明有重复的
+    //该方法返回元素重复的属性
+    let map = group(arr, [groupPropertyName]);
+
+    if (Object.keys(map).length === arr.length) {
+        return [];
+    } else {
+        return Object.keys(map).filter(key => map[key].length > 1);
+    }
+}
+
+module.exports.containSameElement = containSameElement;
 module.exports.groupSum = groupSum;
 module.exports.sum = sum;
 module.exports.group = group;
