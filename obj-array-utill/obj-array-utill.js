@@ -68,7 +68,17 @@ function containSameElement(arr, groupPropertyName) {
     }
 }
 
+function sortObjectByProperties(arr, groupPropertyNames, sortRuleFunction) {
+    let map = group(arr, groupPropertyNames);
+    let result = [];
+    Object.keys(map).sort(sortRuleFunction).forEach(key => {
+        result = result.concat(map[key]);
+    })
+    return result;
+}
+
 module.exports.containSameElement = containSameElement;
 module.exports.groupSum = groupSum;
 module.exports.sum = sum;
 module.exports.group = group;
+module.exports.sortObjectByProperties = sortObjectByProperties;

@@ -552,3 +552,118 @@ module.exports.service_claims_record = [{
         type: 'BIGINT'
     }
 ]
+
+module.exports.FinanceSalesOrder = [{
+        tableName: 'address',
+        type: 'VARCHAR'
+    }, {
+        tableName: 'alipayno',
+        type: 'VARCHAR'
+    }, {
+        tableName: 'auditdate',
+        type: 'BIGINT'
+    }, {
+        tableName: 'buyernick',
+        type: 'VARCHAR'
+    }, {
+        tableName: 'cityname',
+        type: 'VARCHAR'
+    }, {
+        tableName: 'code',
+        type: 'VARCHAR'
+    }, {
+        tableName: 'country',
+        type: 'VARCHAR'
+    }, {
+        tableName: 'consignee',
+        type: 'VARCHAR'
+    }, {
+        tableName: 'countyname',
+        type: 'VARCHAR'
+    }, {
+        tableName: 'isdeliveryfinished',
+        type: 'BOOLEAN'
+    }, {
+        tableName: 'isfinished',
+        type: 'BOOLEAN'
+    }, {
+        tableName: 'isnewvip',
+        type: 'BOOLEAN'
+    },
+    {
+        tableName: 'membercode',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'membername',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'mobile',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'payAmount',
+        type: 'DECIMAL'
+    },
+    {
+        tableName: 'deliveryquantity',
+        type: 'INTEGER'
+    },
+    {
+        tableName: 'priceoriginal',
+        type: 'DECIMAL'
+    },
+    {
+        tableName: 'priceselling',
+        type: 'DECIMAL'
+    },
+    {
+        tableName: 'productcode',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'productname',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'quantity',
+        type: 'INTEGER'
+    },
+    {
+        tableName: 'skucode',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'skuname',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'provincename',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'shopcode',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'shopname',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'status',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'tradeid',
+        type: 'VARCHAR'
+    },
+    {
+        tableName: 'create_time',
+        type: 'BIGINT'
+    },
+    {
+        tableName: 'update_time',
+        type: 'BIGINT'
+    }
+]

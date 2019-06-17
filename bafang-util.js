@@ -1,4 +1,4 @@
-var objs = require('./objs').buchongxingxi;
+var objs = require('./objs').FinanceSalesOrder;
 
 function generateInsertSql(table, fieldObjs) {
 
@@ -90,6 +90,9 @@ function generateEntity(fieldObjs) {
             case 'DECIMAL':
                 clazz = 'BigDecimal'
                 break;
+            case 'BOOLEAN':
+                clazz = 'Boolean'
+                break;
             default:
                 break;
         }
@@ -102,10 +105,10 @@ function generateEntity(fieldObjs) {
     console.log(jsonPropertyJsonProperties);
 }
 
-generateInsertSql('service_claims_record', objs);
-console.log('-------------------');
-generateUpdateSql('service_claims_record', objs);
-console.log('-------------------');
-generateResultMap(objs);
-console.log('-------------------');
+// generateInsertSql('service_claims_record', objs);
+// console.log('-------------------');
+// generateUpdateSql('service_claims_record', objs);
+// console.log('-------------------');
+// generateResultMap(objs);
+// console.log('-------------------');
 generateEntity(objs);
