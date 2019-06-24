@@ -1,0 +1,27 @@
+{
+    "get": {
+        "x-swagger-router-controller": "controller",
+        "operationId": "function",
+        "x-permission": "authorized",
+        "tags": [
+            "tag"
+        ],
+        "parameters": [{
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "type": "string"
+        }],
+        "responses": {
+            "200": {
+                "description": "Success"
+            },
+            "default": {
+                "description": "Failed",
+                "schema": {
+                    "$ref": "#/definitions/Error"
+                }
+            }
+        }
+    }
+}

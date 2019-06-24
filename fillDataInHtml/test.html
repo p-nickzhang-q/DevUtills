@@ -1,10 +1,18 @@
 hello {{username}} date {{date}}
-<p for="a in arr">{{a}}</p>
-<span for="b in arr2">{{b}}</span>
+<arr a>
+    <p>{{a}}</p>
+</arr>
+<arr2 b>
+    <span>{{b}}</span>
+</arr2>
 
-<tr for="user in arr3 ">
-    <span>{{user.name}}</span>
-    <span>{{username}}</span>
-</tr>
+<arr3 user>
+    <tr>
+        <span>{{user.name}}</span>
+        <span>{{username}}</span>
+    </tr>
+</arr3>
 
-<p for="age in arr4">{{age}}</p>
+<arr4 age>
+    <p>{{age}}</p>
+</arr4>

@@ -10,10 +10,10 @@ fs.readFile('./fillDataInHtml/test.html', (err, html) => {
         date: 1561018636477,
         arr2: ['a', 'b'],
         arr3: [{
-                name: 'zh'
+                name: 'zh2'
             },
             {
-                name: 'zh2'
+                name: 'zh3'
             }
         ],
         arr4: [1, 2]
