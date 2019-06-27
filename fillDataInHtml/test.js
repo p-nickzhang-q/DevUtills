@@ -10,12 +10,23 @@ fs.readFile('./fillDataInHtml/test.html', (err, html) => {
         date: 1561018636477,
         arr2: ['a', 'b'],
         arr3: [{
-                name: 'zh2'
+                name: 'zh2',
+                obj: {
+                    a: 'a',
+                    b: 'b'
+                }
             },
             {
-                name: 'zh3'
+                name: 'zh3',
+                obj: {
+                    a: 'c',
+                    b: 'd'
+                }
             }
         ],
+        obj: {
+            'test': 'test'
+        },
         arr4: [1, 2]
     }))
 });

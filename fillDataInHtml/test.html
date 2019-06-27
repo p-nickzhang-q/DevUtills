@@ -1,4 +1,6 @@
 hello {{username}} date {{date}}
+<br> {{obj.test}}
+<br>
 <arr item="a">
     <p>{{a}}</p>
 </arr>
@@ -9,7 +11,8 @@ hello {{username}} date {{date}}
 <arr3 item="user">
     <tr>
         <span>{{user.name}}</span>
-        <span>{{username}}</span>
+        <span>{{user.obj.a}}</span>
+        <span>{{user.obj.b}}</span>
     </tr>
 </arr3>
 
