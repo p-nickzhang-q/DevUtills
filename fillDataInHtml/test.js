@@ -27,6 +27,7 @@ fs.readFile('./fillDataInHtml/test.html', (err, html) => {
         obj: {
             'test': 'test'
         },
-        arr4: [1, 2]
+        arr4: [1, 2],
+        arr: []
     }))
 });
