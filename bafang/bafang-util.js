@@ -1,4 +1,4 @@
-var objs = require('./objs').FinanceSalesOrder;
+var objs = require('./objs').buchong;
 
 function generateInsertSql(table, fieldObjs) {
 
@@ -105,10 +105,10 @@ function generateEntity(fieldObjs) {
     console.log(jsonPropertyJsonProperties);
 }
 
-// generateInsertSql('service_claims_record', objs);
-// console.log('-------------------');
-// generateUpdateSql('service_claims_record', objs);
-// console.log('-------------------');
-// generateResultMap(objs);
-// console.log('-------------------');
+generateInsertSql('nl_in_stock_header', objs);
+console.log('-------------------');
+generateUpdateSql('nl_in_stock_header', objs);
+console.log('-------------------');
+generateResultMap(objs);
+console.log('-------------------');
 generateEntity(objs);
