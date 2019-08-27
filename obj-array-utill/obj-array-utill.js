@@ -77,6 +77,53 @@ function sortObjectByProperties(arr, groupPropertyNames, sortRuleFunction) {
     return result;
 }
 
+module.exports.trimJsonKey = (json) => {
+    return json.map(item => {
+        var newItem = {};
+        Object.keys(item).forEach(k => {
+            newItem[k.trim()] = item[k];
+        });
+        return newItem;
+    })
+}
+
+//trim json对象的value
+function trimJsonValue(json) {
+    if (Object.prototype.toString.call(json) === '[object Array]') {
+        this.trimArrayValue(json);
+    } else {
+        //json 是map
+        this.trimObjectValue(json);
+    }
+}
+
+function trimObjectValue(item) {
+    Object.keys(item).forEach(k => {
+        if (Object.prototype.toString.call(item[k]) === '[object String]') {
+            item[k] = item[k].trim()
+        } else if (Object.prototype.toString.call(item[k]) === '[object Object]') {
+            //item 是Object
+            this.trimObjectValue(item[k]);
+        } else if (Object.prototype.toString.call(item[k]) === '[object Array]') {
+            this.trimArrayValue(item[k]);
+        }
+    });
+}
+
+function trimArrayValue(arr) {
+    arr.forEach((item, index) => {
+        if (Object.prototype.toString.call(item) === '[object String]') {
+            arr[index] = item.trim();
+        } else if (Object.prototype.toString.call(item) === '[object Object]') {
+            //item 是Object
+            this.trimObjectValue(item);
+        }
+    })
+}
+
+module.exports.trimArrayValue = trimArrayValue;
+module.exports.trimObjectValue = trimObjectValue;
+module.exports.trimJsonValue = trimJsonValue;
 module.exports.containSameElement = containSameElement;
 module.exports.groupSum = groupSum;
 module.exports.sum = sum;
