@@ -42,7 +42,12 @@ function groupSum(arr, groupPropertyNames, sumPropertyNames) {
         let groupArr = map[key];
         sumMap[key] = {};
         sumPropertyNames.forEach(sumPropertyName => {
-            sumMap[key][sumPropertyName] = sum(groupArr, sumPropertyName);
+            //$count, 计算分组里的个数
+            if (sumPropertyName === '$count') {
+                sumMap[key]['$count'] = groupArr.length;
+            } else {
+                sumMap[key][sumPropertyName] = sum(groupArr, sumPropertyName);
+            }
         })
     })
 
