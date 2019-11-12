@@ -7,10 +7,18 @@ function group(arr, groupPropertyNames) {
     const map = {};
     arr.forEach(item => {
         let key = groupPropertyNames.reduce((pv, cv, index) => {
+            var cvArr = cv.split('.');
+            var value = item;
+            cvArr.forEach(k => {
+                value = value[k];
+                if (!value) {
+                    console.error(`Object ${JSON.stringify(item)} 的 ${cvArr} 不存在`);
+                }
+            })
             if (index === 0) {
-                return item[cv];
+                return value;
             } else {
-                return pv + '.' + item[cv];
+                return pv + '.' + value;
             }
         }, '')
         if (!map[key]) {
@@ -126,6 +134,15 @@ function trimArrayValue(arr) {
     })
 }
 
+//数组1包含数组2，并且元素顺序一样，转换成字符串比较最为省力
+function containArray(arr1, arr2) {
+    if (arr1.join().indexOf(arr2.join()) === -1) {
+        return false;
+    } else {
+        return true
+    }
+}
+
 module.exports.trimArrayValue = trimArrayValue;
 module.exports.trimObjectValue = trimObjectValue;
 module.exports.trimJsonValue = trimJsonValue;
@@ -134,3 +151,4 @@ module.exports.groupSum = groupSum;
 module.exports.sum = sum;
 module.exports.group = group;
 module.exports.sortObjectByProperties = sortObjectByProperties;
+module.exports.containArray = containArray;
