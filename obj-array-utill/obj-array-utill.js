@@ -143,6 +143,12 @@ function containArray(arr1, arr2) {
     }
 }
 
+function uniqueArr(arr, uniquePropertyName) {
+    var group = this.group(arr, [uniquePropertyName]);
+    return Object.keys(group).map(k => group[k][0]);
+}
+
+module.exports.uniqueArr = uniqueArr;
 module.exports.trimArrayValue = trimArrayValue;
 module.exports.trimObjectValue = trimObjectValue;
 module.exports.trimJsonValue = trimJsonValue;
