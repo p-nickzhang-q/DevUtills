@@ -1,4 +1,4 @@
-var objs = require('./objs').buchong;
+var objs = require('./objs').salary;
 
 function generateInsertSql(table, fieldObjs) {
 
