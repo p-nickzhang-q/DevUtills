@@ -1,4 +1,4 @@
-var objs = require('./objs').salary;
+var objs = require('./objs').nl_repair_pack_stock_ext;
 
 function generateInsertSql(table, fieldObjs) {
 
@@ -35,9 +35,9 @@ function generateUpdateSql(table, fieldObjs) {
     var updates = '';
     Object.keys(fields).forEach(field => {
         if (Object.keys(fields).indexOf(field) == Object.keys(fields).length - 1) {
-            updates += `<if test="${transformStr(field)}!= null"> ${field} = ${fields[field]}</if>\n`
+            updates += `<if test="${transformStr(field)}!= null">${field} = ${fields[field]}</if>\n`
         } else {
-            updates += `<if test="${transformStr(field)}!= null"> ${field} = ${fields[field]},</if>\n`
+            updates += `<if test="${transformStr(field)}!= null">${field} = ${fields[field]},</if>\n`
         }
     })
     var updateSql = `update ${table} \n<set>\n${updates}</set> \nwhere id = #{id,jdbcType=BIGINT};`
@@ -91,7 +91,7 @@ function generateEntity(fieldObjs) {
                 clazz = 'BigDecimal'
                 break;
             case 'BOOLEAN':
-                clazz = 'Boolean'
+                clazz = 'boolean'
                 break;
             default:
                 break;
@@ -105,9 +105,9 @@ function generateEntity(fieldObjs) {
     console.log(jsonPropertyJsonProperties);
 }
 
-generateInsertSql('nl_in_stock_header', objs);
+generateInsertSql('nl_repair_pack_stock_ext', objs);
 console.log('-------------------');
-generateUpdateSql('nl_in_stock_header', objs);
+generateUpdateSql('nl_repair_pack_stock_ext', objs);
 console.log('-------------------');
 generateResultMap(objs);
 console.log('-------------------');

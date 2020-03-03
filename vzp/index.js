@@ -1,3 +1,17 @@
-var str = "日期	企业名称	部门	姓名	身份证	银行名称	银行账户	应发工资	基本工资	岗位补贴	通讯补贴	午餐补贴	交通补贴	事假	病假	入离职缺勤天数	应出勤天数	事假扣款	病假扣款	入离职缺勤扣款	绩效奖金	业绩提成	税前补差	个人社保	个税"
-str.split(' ')
-debugger
+function transformStr(str) {
+    var newStr = '';
+    var arr = str.split(' '); //split是分隔字符串
+    for (var i = 0; i < arr.length; i++) {
+        var s = arr[i];
+        if (i == 0) {
+            newStr += s;
+        } else {
+            newStr += s.substr(0, 1).toLocaleUpperCase();
+            newStr += s.substr(1, s.length - 1);
+        }
+    }
+
+    return newStr;
+}
+
+console.log(transformStr('zhu chang dian hua '));
